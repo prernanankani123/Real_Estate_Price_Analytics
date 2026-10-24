@@ -1,134 +1,132 @@
-# 🏠 Smart Real-Estate Price Analytics
+# Smart Real Estate Price Analysis
 
-**End-to-End Data Analytics Project using Python**
+**Exploratory Data Analysis of King County House Sales using Python**
 
-# 📌 Project Overview
+A data analytics project exploring how property characteristics relate to house prices. The analysis starts with a raw housing dataset, addresses missing values, prepares date information, and uses visualizations to investigate pricing patterns.
 
-- This project focuses on analyzing real-estate housing data to identify the key factors influencing house prices.
-- It demonstrates an end-to-end Data Analytics workflow, including data cleaning, missing value treatment, exploratory data analysis (EDA), data visualization, and business insight generation using Python.
-- The dataset contains real-world issues such as missing values and outliers, making this project highly relevant for industry-level data analyst roles.
+## Project at a Glance
 
-# 🎯 Project Objectives
+| Item | Details |
+|---|---|
+| Domain | Real Estate Analytics |
+| Dataset | King County House Sales (with missing values) |
+| Records | 21,613 |
+| Original columns | 22 |
+| Analysis target | `price` |
+| Environment | Jupyter Notebook |
 
-- Clean and preprocess raw housing data
-- Handle missing values using appropriate statistical methods
-- Perform Exploratory Data Analysis (EDA)
-- Visualize data using Matplotlib and Seaborn
-- Identify price-driving factors in the housing market
-- Generate actionable business insights
+## Business Questions
 
-# 🛠️ Skills & Tools Used (ATS Optimized)
+This analysis explores questions relevant to buyers, sellers, and real-estate analysts:
 
-- Python
-- NumPy
-- Pandas
-- Data Cleaning & Preprocessing
-- Missing Value Treatment
-- Exploratory Data Analysis (EDA)
-- Data Visualization
-- Matplotlib
-- Seaborn
-- Business Analytics
+- How are house prices distributed across the dataset?
+- How does living area relate to sale price?
+- How do bedroom and bathroom counts vary across price ranges?
+- Are waterfront properties associated with higher prices?
+- How are price, living area, bathrooms, bedrooms, and grade correlated?
 
-# 📂 Dataset Information
+## Tools & Skills
 
-**Dataset Name:** King County House Sales Dataset (with NaN values)
-**Rows:** 21,613
-**Columns:** 22
-**Target Variable**: price
-**_Key Features:_**
-**Property size:** sqft_living, sqft_lot
-**Structure:** bedrooms, bathrooms, floors
-**Quality:** grade, condition
-**Location:** zipcode, waterfront, view
-**Renovation & construction**: yr_built, yr_renovated
+- **Python** — analysis workflow
+- **Pandas** — data loading, inspection, cleaning, and date conversion
+- **NumPy** — numerical analysis foundations
+- **Matplotlib** — histograms and scatter plots
+- **Seaborn** — box plots and correlation heatmap
+- **Exploratory Data Analysis (EDA)** — investigating distributions and relationships
+- **Data quality handling** — missing-value detection and treatment
 
-# 🔍 Project Workflow
-## 1️⃣ Data Loading & Understanding
+## Dataset
 
-- Loaded dataset using Pandas
-- Checked shape, data types, and summary statistics
-- Identified irrelevant and missing data
+The CSV contains 21,613 records and 22 columns before cleaning. The main fields include:
 
-## 2️⃣ Data Cleaning & Preprocessing
+| Category | Example columns |
+|---|---|
+| Sale information | `price`, `date`, `id` |
+| Property size | `sqft_living`, `sqft_lot`, `sqft_above`, `sqft_basement` |
+| Structure | `bedrooms`, `bathrooms`, `floors` |
+| Quality and amenities | `grade`, `condition`, `view`, `waterfront` |
+| Construction | `yr_built`, `yr_renovated` |
+| Location | `zipcode`, `lat`, `long` |
 
-- Removed unnecessary index column (Unnamed: 0)
-- Converted date column to datetime format
-- Validated numerical and categorical features
+The dataset includes missing values in `bedrooms` and `bathrooms`, which are handled during preprocessing.
 
-## 3️⃣ Missing Value Treatment
+## Workflow
 
-**Missing values were found in:**
+### 1. Load and inspect the data
+- Read the CSV into a Pandas DataFrame.
+- Review the dataset shape, data types, and descriptive statistics.
+- Identify missing values and understand the available features.
 
-1. bedrooms
-2. bathrooms
+### 2. Clean and prepare
+- Remove the redundant `Unnamed: 0` index column.
+- Check missing-value counts by column.
+- Fill missing `bedrooms` and `bathrooms` values using their respective **mean values**.
+- Convert `date` to a datetime data type.
+- Recheck missing values after treatment.
 
-**Method Used:**
-- Median imputation was applied to preserve data distribution and avoid the impact of outliers.
+### 3. Explore and visualize
+The notebook uses Matplotlib and Seaborn to investigate:
 
-## 4️⃣ Exploratory Data Analysis (EDA)
+- **Price distribution:** histogram to understand the spread of sale prices.
+- **Living area vs. price:** scatter plot to examine their relationship.
+- **Bedrooms vs. price:** box plot to compare price distributions across bedroom counts.
+- **Bathrooms vs. price:** scatter plot to explore how bathroom count relates to price.
+- **Waterfront vs. price:** box plot to compare waterfront and non-waterfront properties.
+- **Correlation among key variables:** heatmap for `price`, `sqft_living`, `bathrooms`, `bedrooms`, and `grade`.
 
-**EDA was performed using:**
-1. Histograms
-2. Scatter plots
-3. Box plots
-4. Correlation heatmaps
-**Key Analysis Areas:**
-1. Price distribution
-2. Relationship between price and living area
-3. Impact of bedrooms, bathrooms, and grade
-4. Effect of renovation, waterfront, and view
-5. Location-based price variation
+## Key Findings
 
-## 5️⃣ Feature Engineering
+Based on the visual analysis in the notebook:
 
-- New analytical features were created to improve insights:
-- house_age – Age of the house
-- is_renovated – Renovation indicator
-- price_per_sqft – Fair price comparison metric
+- House prices are **right-skewed**, with relatively few high-priced properties.
+- Larger living areas generally correspond to higher sale prices.
+- Price distributions vary across bedroom counts; adding bedrooms does not necessarily mean a proportional price increase.
+- Bathroom count shows a visible relationship with price, although a chart alone does not establish causation.
+- Waterfront properties appear to occupy a higher-priced segment.
+- Among the selected variables, `sqft_living` shows the strongest correlation with `price` in the notebook's correlation heatmap.
 
-## 6️⃣ Segment-Wise Analysis
+These findings describe associations in this dataset; they should not be interpreted as proof that any single feature causes a price change.
 
-**Properties were analyzed across:**
-- _Budget homes_
-- _Mid-range homes_
-- _Luxury homes_
-- This helped in understanding different pricing behaviors across market segments.
+## Repository Structure
 
-## 7️⃣ Data Visualization Dashboard
+Keep the following files together in the GitHub repository:
 
-- A user-friendly analytical dashboard was built using:
-a. Matplotlib
-b. Seaborn
-- The dashboard clearly communicates insights for non-technical stakeholders.
+```text
+smart-real-estate-price-analysis/
+├── Real_Estate_Price_Analyticss.html   # Exported notebook for browser viewing
+├── kc_house_data_NaN.csv               # Input dataset
+└── README.md                           # Project documentation
+```
 
-## 📊 Key Insights
+If you also upload the original `.ipynb` notebook, add its filename to this list so reviewers can run the analysis interactively.
 
-1. Living area (sqft_living) is the strongest price driver
-2. Construction grade significantly impacts house prices
-3. Bathrooms influence price more than bedrooms
-4. Renovated and waterfront properties form premium segments
-5. Lot size alone has limited impact on pricing
+## How to Run
 
-## 📈 Business Recommendations
+1. Clone or download this repository.
+2. Install the required libraries:
 
-1. Focus on improving construction quality rather than increasing bedroom count
-2. Renovation offers strong return on investment
-3. Waterfront and high-view properties should be marketed as premium assets
-4. Buyers should prioritize living area over number of rooms
+   ```bash
+   pip install pandas numpy matplotlib seaborn jupyter
+   ```
 
-## ⚠️ Limitations & Assumptions
+3. Keep `kc_house_data_NaN.csv` in the same directory as the notebook.
+4. Open the notebook in Jupyter and run the cells in order.
 
-**Limitations:**
+The exported HTML file can be opened directly in a browser to review the notebook without running the code.
 
-- No inflation adjustment
-- Location limited to zipcode level
-- No predictive modeling included
+## Limitations & Next Steps
 
-## **Assumptions:**
+- Mean imputation is simple, but it can be sensitive to outliers and may produce fractional values for count-like fields. Compare it with median or domain-based treatment in a future iteration.
+- The analysis is exploratory; it does not train or evaluate a house-price prediction model.
+- Location is explored through the available location fields, but the notebook does not provide a dedicated geographic analysis.
+- The current notebook presents selected charts rather than an interactive dashboard.
 
-- Data reflects fair market conditions
-- No major economic fluctuations during the period
+Possible extensions include deeper location analysis, outlier investigation, price segmentation, additional feature engineering, and a validated regression model if prediction becomes a project goal.
 
+## Project Takeaway
 
+This project demonstrates a practical Python EDA workflow: inspecting a real-world dataset, handling missing values, preparing dates, visualizing relationships, and translating patterns into understandable real-estate insights.
 
+---
+
+*Created as a portfolio project to demonstrate foundational data analytics skills with Python.*
