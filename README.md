@@ -1,10 +1,11 @@
-# Smart Real Estate Price Analysis
+# 🏠Smart Real Estate Price Analysis
 
-**Exploratory Data Analysis of King County House Sales using Python**
+**End-to-End Data Analytics Project using Python**
 
-A data analytics project exploring how property characteristics relate to house prices. The analysis starts with a raw housing dataset, addresses missing values, prepares date information, and uses visualizations to investigate pricing patterns.
+- A data analytics project exploring how property characteristics relate to house prices.
+- The analysis starts with a raw housing dataset, addresses missing values, prepares date information, and uses visualizations to investigate pricing patterns.
 
-## Project at a Glance
+## Project Details
 
 | Item | Details |
 |---|---|
@@ -15,7 +16,7 @@ A data analytics project exploring how property characteristics relate to house 
 | Analysis target | `price` |
 | Environment | Jupyter Notebook |
 
-## Business Questions
+## 🧾Business Questions
 
 This analysis explores questions relevant to buyers, sellers, and real-estate analysts:
 
@@ -25,7 +26,7 @@ This analysis explores questions relevant to buyers, sellers, and real-estate an
 - Are waterfront properties associated with higher prices?
 - How are price, living area, bathrooms, bedrooms, and grade correlated?
 
-## Tools & Skills
+## 🛠️Tools & Skills
 
 - **Python** — analysis workflow
 - **Pandas** — data loading, inspection, cleaning, and date conversion
@@ -35,7 +36,7 @@ This analysis explores questions relevant to buyers, sellers, and real-estate an
 - **Exploratory Data Analysis (EDA)** — investigating distributions and relationships
 - **Data quality handling** — missing-value detection and treatment
 
-## Dataset
+## 📂Dataset
 
 The CSV contains 21,613 records and 22 columns before cleaning. The main fields include:
 
@@ -50,7 +51,7 @@ The CSV contains 21,613 records and 22 columns before cleaning. The main fields 
 
 The dataset includes missing values in `bedrooms` and `bathrooms`, which are handled during preprocessing.
 
-## Workflow
+## 🔍Workflow
 
 ### 1. Load and inspect the data
 - Read the CSV into a Pandas DataFrame.
@@ -87,46 +88,15 @@ Based on the visual analysis in the notebook:
 
 These findings describe associations in this dataset; they should not be interpreted as proof that any single feature causes a price change.
 
-## Repository Structure
-
-Keep the following files together in the GitHub repository:
-
-```text
-smart-real-estate-price-analysis/
-├── Real_Estate_Price_Analyticss.html   # Exported notebook for browser viewing
-├── kc_house_data_NaN.csv               # Input dataset
-└── README.md                           # Project documentation
-```
-
-If you also upload the original `.ipynb` notebook, add its filename to this list so reviewers can run the analysis interactively.
-
-## How to Run
-
-1. Clone or download this repository.
-2. Install the required libraries:
-
-   ```bash
-   pip install pandas numpy matplotlib seaborn jupyter
-   ```
-
-3. Keep `kc_house_data_NaN.csv` in the same directory as the notebook.
-4. Open the notebook in Jupyter and run the cells in order.
-
-The exported HTML file can be opened directly in a browser to review the notebook without running the code.
-
-## Limitations & Next Steps
+## ⚠️Limitations & Next Steps
 
 - Mean imputation is simple, but it can be sensitive to outliers and may produce fractional values for count-like fields. Compare it with median or domain-based treatment in a future iteration.
 - The analysis is exploratory; it does not train or evaluate a house-price prediction model.
 - Location is explored through the available location fields, but the notebook does not provide a dedicated geographic analysis.
 - The current notebook presents selected charts rather than an interactive dashboard.
 
-Possible extensions include deeper location analysis, outlier investigation, price segmentation, additional feature engineering, and a validated regression model if prediction becomes a project goal.
-
 ## Project Takeaway
 
 This project demonstrates a practical Python EDA workflow: inspecting a real-world dataset, handling missing values, preparing dates, visualizing relationships, and translating patterns into understandable real-estate insights.
 
----
 
-*Created as a portfolio project to demonstrate foundational data analytics skills with Python.*
