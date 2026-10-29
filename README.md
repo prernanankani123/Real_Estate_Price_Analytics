@@ -1,7 +1,5 @@
 # 🏠Smart Real Estate Price Analysis
 
-**End-to-End Data Analytics Project using Python**
-
 - A data analytics project exploring how property characteristics relate to house prices.
 - The analysis starts with a raw housing dataset, addresses missing values, prepares date information, and uses visualizations to investigate pricing patterns.
 
